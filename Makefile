@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nkrifa <nkrifa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/02/09 13:47:47 by fsidler           #+#    #+#              #
-#    Updated: 2017/10/18 01:56:41 by nkrifa           ###   ########.fr        #
+#    Created: 2017/10/09 13:47:47 by nkrifa            #+#    #+#              #
+#    Updated: 2017/10/20 00:22:18 by nkrifa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,16 +16,20 @@ LIB_NAME = ft
 LIBDIR = libft
 FLAGS = -Wall -Wextra -Werror -O3
 
-HEADERS = includes
+HEADERS = includes/fdf.h
 
 SOURCES = srcs/draw.c \
+		  srcs/tools.c \
+		  srcs/parsing.c \
+		  srcs/main.c \
+		  srcs/controls.c
 	
 
 OBJECTS = $(SOURCES:.c=.o)
 
 $(NAME): $(LIBDIR)/lib$(LIB_NAME).a $(OBJECTS)
 	@$(CC) $(FLAGS) -L $(LIBDIR) -l $(LIB_NAME) -o $@ $^ -lmlx -framework OpenGL -framework AppKit
-	@echo "compiling [ $(NAME) ] SUCCESS"
+	@echo "$(NAME) is ready  to use"
 
 $(LIBDIR)/lib$(LIB_NAME).a : 
 	@$(MAKE) -C $(LIBDIR)
