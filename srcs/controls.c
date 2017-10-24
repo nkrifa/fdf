@@ -6,7 +6,7 @@
 /*   By: nkrifa <nkrifa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 23:22:50 by nkrifa            #+#    #+#             */
-/*   Updated: 2017/10/20 00:06:50 by nkrifa           ###   ########.fr       */
+/*   Updated: 2017/10/20 03:13:03 by nkrifa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int		ft_expose_hook(t_env *e)
 	draw_map(e);
 	mlx_put_image_to_window(e->mlx, e->win, e->img->img_ptr, 0, 0);
 	mlx_string_put(e->mlx, e->win, 10, e->reso - 50, 0xFFFFCC,\
-		"|  End with esc | Keyboard arrows to Move | Zoom with Q W |");
+		"| End with esc | Keyboard arrows to Move | Zoom with Q W |");
 	mlx_string_put(e->mlx, e->win, 10, e->reso - 33, 0xFFFFCC, \
-		"| Depth with E R |       Color with T      |");
+		"| Color with T |      Depth with E R     |");
 	return (0);
 }
 
@@ -69,7 +69,7 @@ int		ft_key_hook3(int keycode, t_env *e)
 	}
 	if (keycode == MINUS)
 	{
-		if (e->zoom >= -35)
+		if (e->zoom > 0)
 			e->zoom -= 1;
 		mlx_destroy_image(e->mlx, e->img->img_ptr);
 		ft_expose_hook(e);

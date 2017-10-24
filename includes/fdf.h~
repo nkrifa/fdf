@@ -6,7 +6,7 @@
 /*   By: nkrifa <nkrifa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/13 23:58:16 by nkrifa            #+#    #+#             */
-/*   Updated: 2017/10/20 04:51:08 by nkrifa           ###   ########.fr       */
+/*   Updated: 2017/10/20 04:50:28 by nkrifa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@
 # define LINE_ERROR "Error : wrong line lenght"
 # define CHAR_ERROR "Error : wrong char in file"
 
-typedef struct	s_img
+typedef struct 	s_img
 {
-	void	*img_ptr;
-	int		*data;
-	int		size_l;
-	int		bpp;
-	int		endian;
+    void	*img_ptr;
+    int		*data;
+    int		size_l;
+    int		bpp;
+    int		endian;
 }				t_img;
 
 typedef struct	s_env

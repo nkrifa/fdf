@@ -6,7 +6,7 @@
 /*   By: nkrifa <nkrifa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 23:45:08 by nkrifa            #+#    #+#             */
-/*   Updated: 2017/10/20 00:01:42 by nkrifa           ###   ########.fr       */
+/*   Updated: 2017/10/20 02:56:21 by nkrifa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_color(t_env *e)
 	e->color_index++;
 }
 
-int		**ft_newtab(char *buffer, int nbl, int nbi, int j)
+int		**ft_tab(char *buffer, int nbl, int nbi, int j)
 {
 	int		i;
 	int		k;
@@ -56,17 +56,17 @@ int		**ft_newtab(char *buffer, int nbl, int nbi, int j)
 	return (tab);
 }
 
-int		ft_init_struct(char *buffer, int nbl, int nbi, int i)
+int		ft_start_struct(char *buffer, int nbl, int nbi, int i)
 {
 	t_env	e;
 
-	e.reso = 800;
+	e.reso = 1200;
 	e.color_display = i;
 	e.color_index = 0;
 	e.z = 2.0;
 	e.mvtx = 0;
 	e.mvty = 0;
-	e.tab = ft_newtab(buffer, nbl, nbi, 0);
+	e.tab = ft_tab(buffer, nbl, nbi, 0);
 	e.l = nbl;
 	e.i = nbi;
 	if (e.l >= e.i)

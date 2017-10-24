@@ -6,13 +6,13 @@
 /*   By: nkrifa <nkrifa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 23:30:18 by nkrifa            #+#    #+#             */
-/*   Updated: 2017/10/18 23:54:23 by nkrifa           ###   ########.fr       */
+/*   Updated: 2017/10/20 00:39:32 by nkrifa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int		ft_hexa(char *buffer, int i, int num, int start)
+int		ft_check(char *buffer, int i, int num, int start)
 {
 	if (buffer[i - 1] < '0' || buffer[i - 1] > '9')
 		return (-1);
@@ -96,7 +96,7 @@ int		ft_invalid(char *buffer, int i)
 		if (buffer[i] != '-' && buffer[i] != ' ' && buffer[i] != '\n'\
 				&& !(buffer[i] >= '0' && buffer[i] <= '9'))
 		{
-			if (buffer[i] == ',' && ft_hexa(buffer, i, i + 9, i) == -1)
+			if (buffer[i] == ',' && ft_check(buffer, i, i + 9, i) == -1)
 			{
 				ft_putstr_fd(CHAR_ERROR, 2);
 				return (-1);

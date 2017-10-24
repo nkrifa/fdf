@@ -6,13 +6,13 @@
 /*   By: nkrifa <nkrifa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/18 23:39:08 by nkrifa            #+#    #+#             */
-/*   Updated: 2017/10/19 23:55:46 by nkrifa           ###   ########.fr       */
+/*   Updated: 2017/10/20 00:39:34 by nkrifa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-int		ft_start(char *argv, int argc, int *fd)
+int		ft_start_exe(char *argv, int argc, int *fd)
 {
 	if (argc == 1)
 	{
@@ -47,7 +47,7 @@ int		main(int argc, char **argv)
 
 	nbl = 0;
 	buffer = ft_strnew(1);
-	if (ft_start(argv[1], argc, &fd) == -1)
+	if (ft_start_exe(argv[1], argc, &fd) == -1)
 		return (0);
 	while (get_next_line(fd, &line) > 0 && nbl++ > -1)
 		buffer = ft_strjoin(ft_strjoin(buffer, line), "\n");
@@ -58,7 +58,7 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	if (ft_endbuffer(buffer, &nbi) != NULL)
-		ft_init_struct(buffer, nbl, nbi, 0xFFFFFF);
+		ft_start_struct(buffer, nbl, nbi, 0xFFFFFF);
 	if (close(fd) == -1)
 		ft_putstr_fd(READ_ERROR, 2);
 	return (0);
